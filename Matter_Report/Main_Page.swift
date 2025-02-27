@@ -98,6 +98,7 @@ struct MainPage: View {
           }
           NavigationLink(destination: Text("More View")) {
             Label("More", systemImage: "ellipsis.circle.fill")
+//                  .foregroundStyle(Color.)
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
               .background(Color.white)
