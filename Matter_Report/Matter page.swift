@@ -18,10 +18,10 @@ struct Matter_page: View {
     @State private var searchItem: String = ""
     @State private var photos: [Photo] = [
           Photo(imageName: "Chaya", label: "Chaya Tree Project"),
-          Photo(imageName: "MCRI", label: "Matter Career Readiness Institute"),
           Photo(imageName: "KebemerHospital", label: "Kebemer Hospital"),
           Photo(imageName: "Samkele Park", label: "Samkele Park"),
-          Photo(imageName: "MatterInnovation", label: "MatterInnovation")
+          Photo(imageName: "MatterInnovation", label: "MatterInnovation"),
+          Photo(imageName: "MCRI", label: "Matter Career Readiness Institute")
           
       ]
 
