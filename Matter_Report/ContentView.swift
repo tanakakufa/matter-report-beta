@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var name: String = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            VStack {
+                Form{
+                    
+                    TextField("Name ", text: $name)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 4))
+                        .foregroundColor(.gray)
+                        .padding()
+                    TextField("Name ", text: $name)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 4))
+                        .foregroundColor(.gray)
+                        .padding()
+                    
+                    
+                }
+                
+                .navigationTitle("Report")
+            }
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
