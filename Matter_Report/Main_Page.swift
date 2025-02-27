@@ -51,7 +51,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-          NavigationLink(destination: Text("Matter View")) { // Link to the Reports_View
+          NavigationLink(destination: ReportMainLayout()) { // Link to the Reports_View
             Label("Reports", systemImage: "doc.text.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
