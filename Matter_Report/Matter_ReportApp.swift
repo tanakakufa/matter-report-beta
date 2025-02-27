@@ -11,7 +11,8 @@ import SwiftUI
 struct Matter_ReportApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Sign_up()
+       
         }
     }
 }
