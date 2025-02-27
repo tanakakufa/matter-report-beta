@@ -72,7 +72,7 @@ struct InfoSection: View {
     var body: some View {
         HStack {
             Label(label, systemImage: icon)
-                .foregroundColor(isSelected ? .orange : .primary)
+                .foregroundColor(isSelected ? .blue : .primary)
                 .font(.title)
                 .bold()
             
