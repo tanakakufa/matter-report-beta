@@ -60,7 +60,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-          NavigationLink(destination: Text("Goals View")) {
+          NavigationLink(destination: GoalsView()) {
             Label("Goals", systemImage: "star.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
@@ -78,7 +78,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-          NavigationLink(destination: Text("Interns View")) {
+            NavigationLink(destination: InternPage()) {
             Label("Interns Enrolled", systemImage: "person.crop.circle.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
@@ -97,7 +97,7 @@ struct MainPage: View {
               .shadow(radius: 3)
           }
           NavigationLink(destination: Text("More View")) {
-            Label("More", systemImage: "ellipsis.circle.fill")
+            Label("Curriculumn", systemImage: "ellipsis.circle.fill")
 //                  .foregroundStyle(Color.)
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
