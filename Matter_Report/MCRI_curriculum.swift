@@ -70,11 +70,13 @@ struct MCRI_Curiculum: View {
                                             .frame(width: 100, height: 120)
                                             .cornerRadius(20)
                                             .background(Color.white)
+                                            .foregroundColor(.black)
                                             .padding()
                                         Text("Changing Zim")
                                             .frame(width: 100, height: 120)
                                             .cornerRadius(20)
                                             .background(Color.white)
+                                            .foregroundColor(.black)
                                             .padding()
                                         
                                         
@@ -131,93 +133,106 @@ struct MCRI_Curiculum: View {
                     
                 }
                 
-               
+                
                 
             }
             Spacer()
-            Text("Soft skills")
+            
+            Text("Tools for soft skills")
                 .font(.title)
                 .bold()
                 .underline()
                 .padding()
-        
+            HStack{
                 VStack{
-                    Text("Communication")
-                     Text("Teamwork")
-                     Text("Collaboration")
-                 
+                    Image("Linkedin")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
+                        .padding()
+                    
+                    Link("linkedin.com", destination: .init(string: "https://www.linkedin.com")!)
+                }
+                
+                VStack{
+                    Image("Tedx")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
+                        .padding()
+                    
+                    Link("ted.com", destination: .init(string: "https://www.ted.com/about/programs-initiatives/tedx-program")!)
+                }
+                
+                VStack{
+                    Image("Zoom")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
+                        .padding()
+                    
+                    Link("zoom.com", destination: .init(string: "https://www.zoom.com")!)
+                    Spacer()
+                }
+                
+                
             }
             
-            Text("Hard skills")
+            Text("Tools hard skills")
                 .font(.title)
                 .bold()
                 .underline()
                 .padding()
-        
+            HStack{
                 VStack{
-                    Text("Swift")
-                     Text("Xcode")
-                     Text("Jira, Confluence")
-                    
-                    Text("Tools for soft skills")
-                        .font(.title)
-                        .bold()
-                        .underline()
+                    Image("Xcode")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
                         .padding()
-                    HStack{
-                        VStack{
-                            Image("Linkedin")
-                                .resizable()
-                                .frame(width: 100, height: 120, alignment: .leading)
-                                .clipShape( RoundedRectangle(cornerRadius: 20))
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
-                                .padding()
-                            
-                            Link("linkedin.com", destination: .init(string: "https://www.linkedin.com")!)
-                        }
-                        
-                        VStack{
-                            Image("Tedx")
-                                .resizable()
-                                .frame(width: 100, height: 120, alignment: .leading)
-                                .clipShape( RoundedRectangle(cornerRadius: 20))
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
-                                .padding()
-                            
-                            Link("ted.com", destination: .init(string: "https://www.ted.com/about/programs-initiatives/tedx-program")!)
-                        }
-                        
-                        VStack{
-                            Image("Zoom")
-                                .resizable()
-                                .frame(width: 100, height: 120, alignment: .leading)
-                                .clipShape( RoundedRectangle(cornerRadius: 20))
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
-                                .padding()
-                            
-                            Link("zoom.com", destination: .init(string: "https://www.zoom.com")!)
-                            Spacer()
-                        }
-                     
-                      
-                    }
-                   
-                   
-                  
-                   
-
+                    
+                    Link("developer.apple.com", destination: .init(string: "https://developer.apple.com/xcode/")!)
+                }
+                
+                VStack{
+                    Image("Jira")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
+                        .padding()
+                    
+                    Link("atlassian.com", destination: .init(string: "https://www.atlassian.com/software/jira?referer=jira.com")!)
+                }
+                
+                VStack{
+                    Image("Bitbucket")
+                        .resizable()
+                        .frame(width: 100, height: 120, alignment: .leading)
+                        .clipShape( RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke( lineWidth: 2))
+                        .padding()
+                    
+                    Link("bitbucket.org", destination: .init(string: "https://bitbucket.org/product/")!)
+                    Spacer()
+                }
+                
             }
             
             Spacer()
             Text("Thank you")
-                .padding()
-                .font(.title2)
+                .font(.system(size: 30, weight: .light, design: .default))
                 .padding(.top, 150)
+                .frame(width: 400, height: 200)
+            
+              
         }
-     
     }
 }
-
 
 
 #Preview {
