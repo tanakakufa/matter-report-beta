@@ -78,7 +78,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-            NavigationLink(destination: InternPage()) {
+            NavigationLink(destination: InternshipReportForm()) {
             Label("Interns Reports", systemImage: "person.crop.circle.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
