@@ -96,7 +96,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-          NavigationLink(destination: Text("More View")) {
+            NavigationLink(destination: MCRI_Curiculum()) {
             Label("Curriculumn", systemImage: "ellipsis.circle.fill")
 //                  .foregroundStyle(Color.)
               .frame(maxWidth: .infinity, alignment: .leading)
