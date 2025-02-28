@@ -12,40 +12,37 @@ struct Sign_up: View {
     @State private var presentAlert: Bool = false
     @State private var passwordNotConfirmedAlert: Bool = false
     @State private var navigateToLogin: Bool = false
+    @State private var showPassword: Bool = false
 
     var body: some View {
+        
         NavigationView {
             VStack {
-                VStack {
-                    Text("Matter Report")
-                        .font(.custom("Georgia", size: 38.9))
-                        .fontWeight(.semibold)
-                    
+                VStack{
+                    Spacer()
+                    Image("MatterLogo")
+                        .resizable()
+                        .frame(width: 220, height: 200)
+                        .overlay{
+                            Circle()
+                                .stroke(.white , lineWidth: 4)
+                                .shadow(radius: 10)
+                                .frame(width: 250, height: 225)
+                        }
+                        .frame(width: 200, height: 200)
+                        .padding()
+                    Spacer()
                 }
-       
-                
-                    
-                Spacer()
 
                 VStack {
-                    Spacer()
-                    Spacer()
-
-                    HStack {
-                        Text("Sign Up")
-                            .font(.custom("Codec Pro", size: 47.3))
-                            .padding()
-                        Spacer()
-                    }
-
+                    
                     TextField("Enter your email address", text: $viewModel.email)
-                        .padding()
-                        .autocapitalization(.none)
-                        .keyboardType(.emailAddress)
-                        .background(Color.gray)
-                        .cornerRadius(15)
-                        .shadow(radius: 2)
-                        .padding()
+                        .padding(10)
+                                              .overlay {
+                                                  RoundedRectangle(cornerRadius: 10)
+                                                      .stroke(.blue, lineWidth: 2)
+                                              }
+                                              .padding()
 
                     if !viewModel.emailErrorMessage.isEmpty {
                         Text(viewModel.emailErrorMessage)
@@ -54,15 +51,36 @@ struct Sign_up: View {
                             .padding(.top, 5)
                     }
 
-                    TextField("Enter your password", text: $viewModel.password)
-                        .padding()
-                        .autocapitalization(.none)
-                        .background(Color.gray)
-                        .cornerRadius(15)
-                        .shadow(radius: 2)
-                        .padding()
+                    ZStack {
+                        Group {
+                            
+                            if showPassword {
+                                TextField("Enter your password", text: $viewModel.password, prompt: Text("Password").foregroundColor(.gray))
+                            } else {
+                                SecureField("Enter your password", text: $viewModel.password,
+                                            prompt: Text("Password").foregroundColor(.gray))
+                            }
+                        }
+                                .padding(10)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.blue, lineWidth: 2)
+                                }
+                                .padding()
+                            
+                            HStack {
+                                Spacer()
+                                Button {
+                                    showPassword.toggle()
+                                } label: {
+                                    Image(systemName: showPassword ? "key.slash" : "key")
+                                        .foregroundColor(.black)
+                                }
+                                .padding(25)                      }
+                        
+                    }
 
-                    Button("Next") {
+                    Button("Sign Up") {
                         Task {
                             if viewModel.isPasswordAccepted() && viewModel.isValidEmail() {
                                 let success = await viewModel.signUp()
@@ -77,7 +95,15 @@ struct Sign_up: View {
                             
                         }
                     }
-                    .padding()
+                    .font(.title2)
+                                       .bold()
+                                       .foregroundColor(.white)
+                    .frame(height: 50)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    Color.gray
+                                )
+                                .cornerRadius(20).padding()
                     .cornerRadius(40)
                     .border(.white)
                     .disabled(viewModel.email.isEmpty || viewModel.password.isEmpty)
@@ -92,20 +118,19 @@ struct Sign_up: View {
                         EmptyView()
                     }
 
-                    HStack {
-                        Text("Already have an account?")
-                            .foregroundColor(.white)
-
                         NavigationLink(destination: Login(viewModel: SignUpViewModel())) {
-                            Text("Sign In")
+                            Text("Already have an account? Log In")
                                 .font(.title3)
                                 .font(.custom("Georgia", size: 20))
                                 .bold()
                         }
+                        Spacer()
                         
-                    }
+                    
                 }
 
+                Spacer()
+                Spacer()
                 Spacer()
             }
           
