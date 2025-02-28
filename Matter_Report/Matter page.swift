@@ -12,7 +12,7 @@ struct Photo: Identifiable {
     var id = UUID()
     var imageName: String
     var label: String
-    var destination: AnyView // Added destination for navigation
+    var destination: AnyView
 }
 
 struct Matter_page: View {
@@ -23,9 +23,23 @@ struct Matter_page: View {
         Photo(imageName: "KebemerHospital", label: "Kebemer Hospital", destination: AnyView(RoleView())),
         Photo(imageName: "Samkele Park", label: "Samkele Park", destination: AnyView(RoleView())),
         Photo(imageName: "MatterInnovation", label: "Matter Innovation", destination: AnyView(RoleView())),
+        Photo(imageName: "Binga", label: "Binga Hospital", destination: AnyView(RoleView())),
+        Photo(imageName: "Bismark", label: "Bismark Foundation", destination: AnyView(RoleView())),
+        Photo(imageName: "Chidobe", label: "Chidobe Chaya Center", destination: AnyView(RoleView())),
+        Photo(imageName: "Foundation", label: "Luol Foundation", destination: AnyView(RoleView())),
+        Photo(imageName: "MaternityWard", label: "Pediatric Hospital", destination: AnyView(RoleView())),
         Photo(imageName: "MCRI", label: "Matter Career Readiness Institute", destination: AnyView(RoleView()))
     ]
-
+    
+   
+    var filteredPhotos: [Photo] {
+        if searchItem.isEmpty {
+            return photos
+        } else {
+            return photos.filter { $0.label.localizedCaseInsensitiveContains(searchItem) }
+        }
+    }
+    
     let columns = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     
     var body: some View {
@@ -62,22 +76,18 @@ struct Matter_page: View {
                     
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(photos) { photo in
+                            ForEach(filteredPhotos) { photo in
                                 VStack {
                                     Image(photo.imageName)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 200, height: 100)
                                     
-                                    NavigationLink(destination: RoleView() ) {
+                                    NavigationLink(destination: photo.destination) {
                                         Text(photo.label)
                                             .foregroundColor(.black)
                                             .font(.headline)
                                     }
-                                                  
-
-                                    
-                                  
                                 }
                             }
                         }
@@ -98,7 +108,6 @@ struct Matter_page: View {
             }
         }
     }
-
 }
 
 #Preview {
