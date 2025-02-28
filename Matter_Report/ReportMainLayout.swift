@@ -12,18 +12,24 @@ struct ReportMainLayout: View {
   var body: some View {
       NavigationStack {
       VStack {
+          HStack{
+
               Text("Reports") // Subheading
-              .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.top) // Add some top padding
+                  .padding()
+                  .font(.custom("Georgia", size: 50))
+                  .fontWeight(.bold)
+                  .foregroundColor(.black)
+                  .padding(.top)
+              Spacer()
+          }
+              // Add some top padding
               Spacer() // Push content down
-        VStack(spacing: 30) {
+        VStack(spacing: 50) {
           HStack(spacing: 30) {
             NavigationLink(destination: Reports_View()) {
               ReportButton(title: "NEW REPORT", icon: "plus")
             }
-            NavigationLink(destination: Text("Saved Reports View")) {
+              NavigationLink(destination: Saved_Notes()) {
               ReportButton(title: "SAVED", icon: "arrow.down.doc")
             }
           }
@@ -68,7 +74,7 @@ struct ReportButton: View {
         .font(.subheadline)
         .fontWeight(.semibold)
     }
-    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 80)
+    .frame(minWidth: 90, maxWidth: .infinity, minHeight: 100)
     .padding()
     .background(Color.blue)
     .foregroundColor(.white)
