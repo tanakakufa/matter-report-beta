@@ -142,7 +142,7 @@ struct Sign_up: View {
             }
           
         }
-    }
+    } 
 }
 
 #Preview {
