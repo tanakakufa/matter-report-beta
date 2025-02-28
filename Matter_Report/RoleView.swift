@@ -22,22 +22,22 @@ struct RoleView: View {
                 VStack(alignment: .leading, spacing: 30) {
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Managers", destination: ManagerPage(), section: "Managers")
+                    roleNavigationLink(label: "Managers", destination: Sign_up(), section: "Managers")
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Facilitators", destination: FacilitatorPage(), section: "Facilitators")
+                    roleNavigationLink(label: "Facilitators", destination: Sign_up(), section: "Facilitators")
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Students", destination: StudentPage(), section: "Students")
+                    roleNavigationLink(label: "Students", destination: Sign_up(), section: "Students")
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Interns", destination: InternPage(), section: "Interns")
+                    roleNavigationLink(label: "Interns", destination: Sign_up(), section: "Interns")
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Project Managers", destination: ProjectManagerPage(), section: "Project Managers")
+                    roleNavigationLink(label: "Project Managers", destination: Sign_up(), section: "Project Managers")
                     Divider().frame(height: 1).background(Color.gray)
                     
-                    roleNavigationLink(label: "Sponsors", destination: SponserPage(), section: "Sponsors")
+                    roleNavigationLink(label: "Sponsors", destination: Sign_up(), section: "Sponsors")
                     Divider().frame(height: 1).background(Color.gray)
                     
                     
@@ -46,10 +46,10 @@ struct RoleView: View {
                 
                 .font(.headline)
                 .padding()
-                
+              
                 
             }
-        }
+        }  .navigationBarBackButtonHidden(false)
     }
         
         
