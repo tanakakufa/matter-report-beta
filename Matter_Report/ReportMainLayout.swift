@@ -10,16 +10,16 @@
 import SwiftUI
 struct ReportMainLayout: View {
   var body: some View {
-    NavigationView {
+      NavigationStack {
       VStack {
               Text("Reports") // Subheading
-                .font(.title)
+              .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
                 .padding(.top) // Add some top padding
               Spacer() // Push content down
-        VStack(spacing: 20) {
-          HStack(spacing: 20) {
+        VStack(spacing: 30) {
+          HStack(spacing: 30) {
             NavigationLink(destination: Reports_View()) {
               ReportButton(title: "NEW REPORT", icon: "plus")
             }
@@ -27,7 +27,7 @@ struct ReportMainLayout: View {
               ReportButton(title: "SAVED", icon: "arrow.down.doc")
             }
           }
-          HStack(spacing: 20) {
+          HStack(spacing: 30) {
             NavigationLink(destination: Text("Deleted Reports View")) {
               ReportButton(title: "Deleted", icon: "doc.text")
             }
@@ -35,7 +35,7 @@ struct ReportMainLayout: View {
               ReportButton(title: "ARCHIVED", icon: "archivebox")
             }
           }
-          HStack(spacing: 20) {
+          HStack(spacing: 30) {
             NavigationLink(destination: Text("Pinned Reports View")) {
               ReportButton(title: "PINNED", icon: "pin")
             }
@@ -44,10 +44,13 @@ struct ReportMainLayout: View {
             }
           }
         }
+          
         .padding()
         Spacer() // Push content up
       }
-      .navigationBarHidden(true) // Keep the navigation bar hidden
+      
+//      .navigationBarHidden(true) // Keep the navigation bar hidden
+        
     }
   }
 }

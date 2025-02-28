@@ -21,7 +21,7 @@ struct GoalsView: View {
     var CRadius: CGFloat = 10
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
                 
                 // Header

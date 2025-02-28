@@ -19,7 +19,7 @@ struct Reports_View: View {
   @State private var goToSaved: Bool = false
   @State private var isSaved: Bool = false // Track if report is saved
   var body: some View {
-    NavigationView {
+      NavigationStack {
       Form {
         Section(header: Text("Report Details")) {
           HStack {

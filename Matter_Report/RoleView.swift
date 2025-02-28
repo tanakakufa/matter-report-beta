@@ -13,42 +13,44 @@ struct RoleView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                Text("Roles")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-                
-                Spacer()
-                VStack(alignment: .leading, spacing: 30) {
-                    Divider().frame(height: 1).background(Color.gray)
+                //                Text("Roles")
+                //                    .font(.largeTitle)
+                //                    .fontWeight(.bold)
+                //                    .padding()
+                //
+                //                Spacer()
+                Group {
+                    VStack(alignment: .leading, spacing: 30) {
+//                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Managers", destination: Sign_up(), section: "Managers")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Facilitators", destination: Sign_up(), section: "Facilitators")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Students", destination: Sign_up(), section: "Students")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Interns", destination: Sign_up(), section: "Interns")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Project Managers", destination: Sign_up(), section: "Project Managers")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        roleNavigationLink(label: "Sponsors", destination: Sign_up(), section: "Sponsors")
+                        Divider().frame(height: 1).background(Color.gray)
+                        
+                        
+                        
+                    }
                     
-                    roleNavigationLink(label: "Managers", destination: Sign_up(), section: "Managers")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    roleNavigationLink(label: "Facilitators", destination: Sign_up(), section: "Facilitators")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    roleNavigationLink(label: "Students", destination: Sign_up(), section: "Students")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    roleNavigationLink(label: "Interns", destination: Sign_up(), section: "Interns")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    roleNavigationLink(label: "Project Managers", destination: Sign_up(), section: "Project Managers")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    roleNavigationLink(label: "Sponsors", destination: Sign_up(), section: "Sponsors")
-                    Divider().frame(height: 1).background(Color.gray)
-                    
-                    
+                    .font(.title3)
+//                    .padding()
                     
                 }
-                
-                .font(.headline)
-                .padding()
-              
-                
             }
+            .navigationTitle("Roles")
         }  .navigationBarBackButtonHidden(false)
     }
         

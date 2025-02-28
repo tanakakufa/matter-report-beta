@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct Sign_up: View {
+    @State var color: LinearGradient = LinearGradient(
+        colors: [.blue, .gray],
+     startPoint: .top,
+     endPoint: .bottom
+    )
     @StateObject var viewModel = SignUpViewModel()
     @State private var presentAlert: Bool = false
     @State private var passwordNotConfirmedAlert: Bool = false
@@ -16,7 +21,8 @@ struct Sign_up: View {
 
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
+           
             VStack {
                 VStack{
                     Spacer()
@@ -43,6 +49,7 @@ struct Sign_up: View {
                                                       .stroke(.blue, lineWidth: 2)
                                               }
                                               .padding()
+                                              .autocapitalization(.none)
 
                     if !viewModel.emailErrorMessage.isEmpty {
                         Text(viewModel.emailErrorMessage)
@@ -107,7 +114,7 @@ struct Sign_up: View {
                     .cornerRadius(40)
                     .border(.white)
                     .disabled(viewModel.email.isEmpty || viewModel.password.isEmpty)
-                    .alert("Welcome", isPresented: $presentAlert) {
+                    .alert("Account created! Sign In", isPresented: $presentAlert) {
                         Button("Ok") {
                             navigateToLogin = true
                         }

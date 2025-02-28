@@ -73,7 +73,9 @@ struct MCRISponsors: View {
                         
                     }
                     .navigationTitle("Sponsors")
+                    
                 }
+                
             }
         }
         

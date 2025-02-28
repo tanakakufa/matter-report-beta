@@ -12,7 +12,7 @@ import SwiftUI
 
 struct MainPage: View {
   var body: some View {
-    NavigationView { // Wrap everything in NavigationView
+      NavigationStack { // Wrap everything in NavigationView
       HStack(spacing: 0) { // HStack with no spacing between the navigation and content
         // Left Navigation Panel
           
@@ -79,7 +79,7 @@ struct MainPage: View {
               .shadow(radius: 3)
           }
             NavigationLink(destination: InternPage()) {
-            Label("Interns Enrolled", systemImage: "person.crop.circle.fill")
+            Label("Interns Reports", systemImage: "person.crop.circle.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
               .background(Color.white)
@@ -88,7 +88,7 @@ struct MainPage: View {
               .shadow(radius: 3)
           }
           NavigationLink(destination: Text("Students View")) {
-            Label("Students Enrolled", systemImage: "person.2.fill")
+            Label("Students Reports", systemImage: "person.2.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
               .background(Color.white)

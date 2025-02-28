@@ -29,7 +29,7 @@ struct Matter_page: View {
     let columns = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.white.ignoresSafeArea()
                 VStack {
