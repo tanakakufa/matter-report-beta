@@ -73,7 +73,13 @@ struct MyApp: App {
 
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
             Reports_View()
+=======
+            Login(viewModel: SignUpViewModel())
+
+       
+>>>>>>> MCRI_Curiculum
         }
     }
 }
