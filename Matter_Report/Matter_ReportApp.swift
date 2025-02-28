@@ -11,7 +11,8 @@ import SwiftUI
 struct Matter_ReportApp: App {
     var body: some Scene {
         WindowGroup {
-            Sign_up()
+            Login(viewModel: SignUpViewModel())
+
        
         }
     }
