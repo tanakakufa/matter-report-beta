@@ -69,7 +69,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-            NavigationLink(destination: SponserPage()) {
+            NavigationLink(destination: MCRISponsors()) {
             Label("Sponsors", systemImage: "person.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
