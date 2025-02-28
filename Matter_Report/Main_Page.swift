@@ -87,7 +87,7 @@ struct MainPage: View {
               .foregroundColor(.primary)
               .shadow(radius: 3)
           }
-          NavigationLink(destination: Text("Students View")) {
+            NavigationLink(destination: StudentPage()) {
             Label("Students Reports", systemImage: "person.2.fill")
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
