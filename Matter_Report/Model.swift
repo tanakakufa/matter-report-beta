@@ -92,26 +92,33 @@ class signUpViewModel: ObservableObject {
     
 }
 
-struct Profile: Decodable {
-  let username: String?
-  let fullName: String?
-  let website: String?
 
-  enum CodingKeys: String, CodingKey {
-    case username
-    case fullName = "full_name"
-    case website
-  }
+
+struct Reports: Decodable {
+ let sender: String?
+ let from: String?
+ let description: String?
+ enum CodingKeys: String, CodingKey {
+  case sender
+  case from
+   case description
+ }
+    
+}
+struct UpdateReportParams: Encodable {
+ let sender: String
+ let from: String
+ let description: String
+ enum CodingKeys: String, CodingKey {
+  case sender
+  case from
+   case description
+ }
 }
 
-struct UpdateProfileParams: Encodable {
-  let username: String
-  let fullName: String
-  let website: String
 
-  enum CodingKeys: String, CodingKey {
-    case username
-    case fullName = "full_name"
-    case website
-  }
-}
+
+
+
+
+

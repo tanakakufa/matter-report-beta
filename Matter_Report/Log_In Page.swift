@@ -19,7 +19,7 @@ struct Login: View {
         NavigationStack{
             VStack {
                 VStack{
-                    Spacer()
+                  
                     Image("MatterLogo")
                         .resizable()
                         .frame(width: 220, height: 200)
@@ -31,7 +31,7 @@ struct Login: View {
                         }
                         .frame(width: 200, height: 200)
                         .padding()
-                    Spacer()
+                        
                 }
                 TextField("Enter your email address", text: $viewModel.email)
                     .padding()
@@ -68,33 +68,7 @@ struct Login: View {
                         .padding(25)                      }
                     
                 }
-                ZStack {
-                    Group {
-                        if showPassword {
-                            TextField("Enter your password", text: $viewModel.password, prompt: Text(" Confirm Password").foregroundColor(.gray))
-                        } else {
-                            SecureField("Enter your password", text: $viewModel.password,
-                                        prompt: Text("Confirm Password").foregroundColor(.gray))
-                        }
-                    }
-                    .padding()
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.blue, lineWidth: 2)
-                    }
-                    .padding()
-                    
-                    HStack {
-                        Spacer()
-                        Button {
-                            showPassword.toggle()
-                        } label: {
-                            Image(systemName: showPassword ? "key.slash" : "key")
-                                .foregroundColor(.black)
-                        }
-                        .padding(25)                      }
-                    
-                }
+            
                 
                 Button("Log In") {
                     Task {
